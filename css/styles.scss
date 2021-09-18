@@ -24,10 +24,96 @@ li {
 p {
 	margin: 0;
 	padding: 0;
+	text-align: center;
+	color: white;
 }
 
 img {
 	display: block;
 	max-width: 100%;
 	height: auto;
+}
+
+.navbar-brand {
+	font-family: 'Caveat', cursive;
+	padding: 0 .5rem;
+	font-size: 2rem;
+}
+
+#drumStick {
+	cursor: pointer;
+}
+
+#drumStick:not(.drawnStick):hover {
+	transition: box-shadow .2s ease-in !important;
+	box-shadow: rgba(255, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(150, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
+#drumStick:not(.drawnStick) {
+	transform: rotate(45deg);
+}
+
+#drumStick:not(.drawnStick) {
+	transition: all ease-in-out .4s;
+}
+
+.drawnStick-1 {
+	transition: all ease-in .5s;
+}
+
+.drawnStick-2 {
+	transition: all ease-in .25s;
+}
+
+.drawnStick-3 {
+	transition: all ease-in .15s;
+}
+
+.drumstickHeader {
+	font-family: 'Caveat', cursive;
+	text-align: center;
+	color: white;
+	font-size: 3rem;
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	  -webkit-user-select: none; /* Safari */
+	   -khtml-user-select: none; /* Konqueror HTML */
+		 -moz-user-select: none; /* Old versions of Firefox */
+		  -ms-user-select: none; /* Internet Explorer/Edge */
+			  user-select: none; /* Non-prefixed version, currently
+									supported by Chrome, Edge, Opera and Firefox */
+  }
+
+  @keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.spinTriggerContainer {
+	text-align: center;
+	margin: auto;
+	padding: 2rem;
+	div:first-child {
+		text-align: right;
+		.spinTrigger {
+			transform: rotate(-22deg);
+		}
+	}
+	div:nth-child(2)  {
+		text-align: left;
+		.spinTrigger {
+		transform: rotate(22deg);
+		}
+	}
+}
+
+.spinTrigger {
+	margin: 0 20px;
 }

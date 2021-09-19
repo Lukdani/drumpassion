@@ -1,6 +1,7 @@
 let isDrawn = false;
 let degrees = 45;
 let currentDegrees = degrees;
+let numberOfHits = 0;
 
 const drawnStick = (elementId) => {
     const element = document.getElementById(elementId);
@@ -30,6 +31,7 @@ const drawnStick = (elementId) => {
             return;
         }
         element.style.transform = `rotate(${degrees + 60}deg)`;
+        numberOfHits ++;
         isDrawn = !isDrawn;
     }
     else if (isDrawn) {
@@ -52,6 +54,10 @@ const removeDrawnClass = (element) => {
 const showTooltip = (show) => {
     const element = document.getElementById("tooltip");
     try {
+        const hitPhrases = ["Hit me, baby!", `Hit me a ${(numberOfHits > 1 ? `${numberOfHits +1}th time!` : (numberOfHits < 1 ? 'first time!' : 'second time!'))}`, "Just DO IT!"]
+
+        const randomIndex = Math.floor(Math.random() * hitPhrases.length);
+        element.innerHTML = !isDrawn ? hitPhrases[randomIndex] : "Pull me back up, plz 🙏";
         element.style.opacity = show ? "1" : "0";
         if (show) {
             var randomNumber = Math.random() * 2;

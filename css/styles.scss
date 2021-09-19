@@ -1,5 +1,9 @@
+
+@import "./bootstrap.scss";
+
 * {
 	box-sizing: border-box;
+	font-family: $font-family;
 }
 
 body {
@@ -35,17 +39,24 @@ img {
 }
 
 .navbar-brand {
-	font-family: 'Caveat', cursive;
-	padding: 0 .5rem;
-	font-size: 2rem;
+	font-family: $header-font;
+	padding: 0 1rem;
+	font-size: 3rem;
 }
 
 #drumStick {
 	cursor: pointer;
+	animation: fadeIn 2.5s;
 }
 
+  @keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+  }
+  
 #drumStick:not(.drawnStick):hover {
 	transition: box-shadow .2s ease-in !important;
+	transform: rotate(45deg);
 	box-shadow: rgba(255, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(150, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
 }
@@ -59,42 +70,27 @@ img {
 }
 
 .drawnStick-1 {
-	transition: all ease-in .5s;
-}
-
-.drawnStick-2 {
-	transition: all ease-in .25s;
-}
-
-.drawnStick-3 {
 	transition: all ease-in .15s;
 }
 
+.drawnStick-2 {
+	transition: all ease-in .1s;
+}
+
+.drawnStick-3 {
+	transition: all ease-in .05s;
+}
+
 .drumstickHeader {
-	font-family: 'Caveat', cursive;
+	font-family: $header-font;
 	text-align: center;
 	color: white;
 	font-size: 3rem;
 }
 
 .noselect {
-	-webkit-touch-callout: none; /* iOS Safari */
-	  -webkit-user-select: none; /* Safari */
-	   -khtml-user-select: none; /* Konqueror HTML */
-		 -moz-user-select: none; /* Old versions of Firefox */
-		  -ms-user-select: none; /* Internet Explorer/Edge */
-			  user-select: none; /* Non-prefixed version, currently
-									supported by Chrome, Edge, Opera and Firefox */
+	user-select: none;
   }
-
-  @keyframes spin {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform:rotate(360deg);
-    }
-}
 
 .spinTriggerContainer {
 	text-align: center;
@@ -104,16 +100,47 @@ img {
 		text-align: right;
 		.spinTrigger {
 			transform: rotate(-22deg);
+			&:hover {
+				transform: rotate(-15deg) scale(1.4);
+			}
 		}
 	}
 	div:nth-child(2)  {
 		text-align: left;
 		.spinTrigger {
 		transform: rotate(22deg);
+		&:hover {
+			transform: rotate(15deg) scale(1.4);
+		}
 		}
 	}
 }
 
 .spinTrigger {
 	margin: 0 20px;
+	transition: transform .25s ease-in-out;
+	color: $custom-light;
+	&:focus {
+		color: inherit;
+	}
+	&:hover {
+		color: inherit !important;
+	}
+}
+
+#tooltip {
+	position: absolute;
+	display: none;
+	font-size: 3rem;
+	color: $custom-secondary;
+	left: 20%;
+	top: 50%;
+	transform: translateY(-100%) rotate(10deg);
+	font-family: $header-font;
+	//transition: display 1s ease-in;
+	animation: fadeIn .5s;
+}
+
+.videoDescription {
+	font-size: 1.25rem;
 }

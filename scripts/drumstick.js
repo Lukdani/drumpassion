@@ -7,6 +7,7 @@ const drawnStick = (elementId) => {
     removeSpinStyle(element);
     var randomNumber = Math.random() * 6;
     console.log(randomNumber);
+    showTooltip(false);
     if (!isDrawn) {
         if (randomNumber < 3) {
             element.classList.remove("drawnStick-2");
@@ -29,7 +30,7 @@ const drawnStick = (elementId) => {
             removeDrawnClass(element)
             return;
         }
-        element.style.transform = `rotate(${degrees + 45}deg)`;
+        element.style.transform = `rotate(${degrees + 60}deg)`;
         isDrawn = !isDrawn;
     }
     else if (isDrawn) {
@@ -49,6 +50,15 @@ const removeDrawnClass = (element) => {
     element.classList.remove("drawnStick-3");
 }
 
+const showTooltip = (show) => {
+    const element = document.getElementById("tooltip");
+    try {
+        console.log(show);
+        element.style.display = show ? "block" : "none";
+    }
+    catch {}
+}
+
 const spinStick = (element, direction) => {
     removeDrawnClass(element);
     const rotationDegrees = 360;
@@ -65,6 +75,8 @@ const initiateEventListener = (elementId) => {
     const element = document.getElementById(elementId);
     if (element != null) {
         element.addEventListener("click", () => drawnStick(elementId));
+        element.addEventListener("mouseenter", () => showTooltip(true) )
+        element.addEventListener("mouseleave", () => showTooltip(false) )
     }
 }
 

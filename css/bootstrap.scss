@@ -13,8 +13,19 @@ $custom-colors: (
 );
  */
 
+$custom-primary: #E55381;
+$custom-secondary: #376996;
+$custom-dark: #190B28;
+$custom-light: #F1DEDE;
+
+$header-font: 'Caveat', cursive;
+$font-family: "Roboto", "sans-serif";
+
 $custom-colors: (
-        "primary": #007bff
+        "primary": $custom-primary,
+        "secondary": $custom-secondary,
+        "dark": $custom-dark,
+        "light": $custom-light,
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
 

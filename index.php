@@ -4,48 +4,106 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Drumpassion</title>
+    <title>DrumPassion</title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
     <meta name="copyright" content="Information om copyright">
-
     <?php include "./includes/dependencies.php" ?>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body class="bg-dark">
+
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="aboutModal">About DrumPassion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    I created this site to share my passion for drumming 🥁. <br><br>
+                    It has been made as a part of a 2021 school 👨‍🎓 project.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <?php include './includes/navbar.php';?>
-    <div class="row bg-dark">
+    <div class="row bg-dark p-4">
         <div class="col-12 bg-dark">
             <h2 class="drumstickHeader">
-                My passion.
+                My passion. Your turn.
             </h2>
 
         </div>
-        <div class="col-12" style="text-align: center;">
+        <div class="col-12" style="text-align: center; position: relative;">
+            <h2 id="tooltip">Hit me, baby!</h2>
             <image class="noselect" id="drumStick" style="height: 400px; margin: auto;" src="./images/drumStick.png" />
         </div>
         <div class="row spinTriggerContainer">
             <div class="col-6">
-                <button class="btn btn-secondary spinTrigger" id="spinLeft">Spin me!</button>
+                <button class="btn btn-primary spinTrigger" id="spinLeft">Spin me left!</button>
             </div>
             <div class="col-6">
-                <button class="btn btn-secondary spinTrigger" id="spinRight">Spin me!</button>
+                <button class="btn btn-primary spinTrigger" id="spinRight">Spin me right!</button>
             </div>
         </div>
+    </div>
+    <div id="influences" class="row bg-secondary">
         <div class="col-12">
-            <h2 class="drumstickHeader">
-                Your future.
+            <h2 class="drumstickHeader p-2">
+                My influences
             </h2>
         </div>
+        <div class="col-12 col-lg-5 offset-lg-1 p-4">
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/IWdyOAse6MQ?start=69" allowfullscreen></iframe>
+            </div>
+            <p class="videoDescription">Jay Weinberg of Slipknot! I love the speed and linear fills.<br>And that snare
+                tone!
+                😱
+            </p>
+        </div>
+        <div class="col-12 col-lg-5 p-4">
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/1yStL-PDu2w?start=60" allowfullscreen></iframe>
+            </div>
+            <p class="videoDescription">Joey Jordison, former drummer of Slipknot! <br>I watch this clip basically every
+                day
+                😍.<br>
+                RIP
+                2021.
+            </p>
+        </div>
+        <div class="col-12 col-lg-5 offset-lg-1 p-4">
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/K7h6hOs_ySw?start=84" allowfullscreen></iframe>
+            </div>
+            <p class="videoDescription">Vinnie Colaiuta. One of my father's favorite drummers.
+
+            </p>
+        </div>
+        <div class="col-12 col-lg-5 p-4">
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/TVljmrKC3FM?start=120" allowfullscreen></iframe>
+            </div>
+            <p class="videoDescription">I have absolute no idea who this is, but I just love this clip! <br>I wish I
+                attended the event and had a cold beer 🍺
+
+            </p>
+        </div>
     </div>
+    <?php include "./includes/footer.php" ?>
     <script src="./scripts/drumstick.js"></script>
     <script>
     initiateEventListener("drumStick");
-    initiateSpinClockwiseListener("spinLeft", "drumStick");
-    initiateSpinCounterClockwiseListener("spinRight", "drumStick");
+    initiateSpinClockwiseListener("spinRight", "drumStick");
+    initiateSpinCounterClockwiseListener("spinLeft", "drumStick");
     </script>
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">

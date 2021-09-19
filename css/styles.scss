@@ -140,6 +140,17 @@ img {
 	
 }
 
+#influences {
+	background: $custom-background-secondary;
+}
+
+.videoContainer {
+	box-shadow: $custom-boxShadow;
+}
+
+.videoContainer:hover {
+	box-shadow: $custom-boxShadow-secondary;
+}
 .videoDescription {
 	font-size: 1.25rem;
 	color: $custom-light;

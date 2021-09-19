@@ -3,26 +3,39 @@ let degrees = 45;
 let currentDegrees = degrees;
 let numberOfHits = 0;
 
+const playDrumSound = (delay, sound) => {
+    var audio = new Audio(`./sounds/${sound}.mp3`);
+setTimeout(() => {
+    audio.play();
+}, delay);
+}
+
 const drawnStick = (elementId) => {
     const element = document.getElementById(elementId);
+
+
     removeSpinStyle(element);
     var randomNumber = Math.random() * 6;
     console.log(randomNumber);
     if (!isDrawn) {
+  
         if (randomNumber < 3) {
             element.classList.remove("drawnStick-2");
             element.classList.remove("drawnStick-3");
             element.classList.toggle("drawnStick-1");
+            playDrumSound(100, "tromme")
         }
         else if (randomNumber < 4) {
             element.classList.remove("drawnStick-1");
             element.classList.remove("drawnStick-3");
             element.classList.toggle("drawnStick-2");
+            playDrumSound(50, "tromme")
         }
         else if (randomNumber < 5) {
             element.classList.remove("drawnStick-1");
             element.classList.remove("drawnStick-2");
             element.classList.toggle("drawnStick-3");
+            playDrumSound(25, "tromme")
         }
         else {
             element.style.visibility = "hidden";
@@ -35,6 +48,7 @@ const drawnStick = (elementId) => {
         isDrawn = !isDrawn;
     }
     else if (isDrawn) {
+        playDrumSound(0, "pull")
         removeDrawnClass(element);
         return;
     }
@@ -76,6 +90,7 @@ const spinStick = (element, direction) => {
     degrees = direction == "Clockwise" ? degrees + rotationDegrees : degrees - rotationDegrees;
     element.style.transform = `rotate(${degrees}deg)`; 
     lastDirection = direction;
+    playDrumSound(0, "spin")
 }
 
 const removeSpinStyle = (element) => {

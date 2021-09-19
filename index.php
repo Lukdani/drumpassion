@@ -42,7 +42,7 @@
 
         </div>
         <div class="col-12" style="text-align: center; position: relative;">
-            <h2 class="d-none d-lg-block" id="tooltip">Hit me, baby!</h2>
+            <h2 class="d-none d-lg-block noselect" id="tooltip">Hit me, baby!</h2>
             <image class="noselect" id="drumStick" style="height: 400px; margin: auto;" src="./images/drumStick.png" />
         </div>
         <div class="row spinTriggerContainer">
@@ -54,7 +54,7 @@
             </div>
         </div>
     </div>
-    <div id="influences" class="row bg-secondary">
+    <div id="influences" class="row">
         <div class="col-12">
             <h2 class="drumstickHeader p-2 text-light">
                 My influences
@@ -66,7 +66,7 @@
             </p>
         </div>
         <div class="col-12 col-lg-5 offset-lg-1 p-4">
-            <div class="ratio ratio-16x9">
+            <div class="ratio ratio-16x9 videoContainer">
                 <iframe src="https://www.youtube.com/embed/IWdyOAse6MQ?start=69" allowfullscreen></iframe>
             </div>
             <p class="videoDescription">Jay Weinberg of Slipknot! I love the speed and linear fills.<br>And that snare
@@ -75,7 +75,7 @@
             </p>
         </div>
         <div class="col-12 col-lg-5 p-4">
-            <div class="ratio ratio-16x9">
+            <div class="ratio ratio-16x9 videoContainer">
                 <iframe src="https://www.youtube.com/embed/1yStL-PDu2w?start=60" allowfullscreen></iframe>
             </div>
             <p class="videoDescription">Joey Jordison, former drummer of Slipknot! <br>I watch this clip basically every
@@ -86,7 +86,7 @@
             </p>
         </div>
         <div class="col-12 col-lg-5 offset-lg-1 p-4">
-            <div class="ratio ratio-16x9">
+            <div class="ratio ratio-16x9 videoContainer">
                 <iframe src="https://www.youtube.com/embed/K7h6hOs_ySw?start=84" allowfullscreen></iframe>
             </div>
             <p class="videoDescription">Vinnie Colaiuta. One of my father's favorite drummers.
@@ -94,7 +94,7 @@
             </p>
         </div>
         <div class="col-12 col-lg-5 p-4">
-            <div class="ratio ratio-16x9">
+            <div class="ratio ratio-16x9 videoContainer">
                 <iframe src="https://www.youtube.com/embed/TVljmrKC3FM?start=120" allowfullscreen></iframe>
             </div>
             <p class="videoDescription">I have absolute no idea who this is, but I just love this clip! <br>I wish I

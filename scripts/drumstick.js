@@ -3,7 +3,7 @@ let degrees = 45;
 let currentDegrees = degrees;
 let numberOfHits = 0;
 
-const playDrumSound = (delay, sound) => {
+const playSound = (delay, sound) => {
     var audio = new Audio(`./sounds/${sound}.mp3`);
 setTimeout(() => {
     audio.play();
@@ -23,23 +23,29 @@ const drawnStick = (elementId) => {
             element.classList.remove("drawnStick-2");
             element.classList.remove("drawnStick-3");
             element.classList.toggle("drawnStick-1");
-            playDrumSound(100, "tromme")
+            playSound(100, "tromme")
         }
         else if (randomNumber < 4) {
             element.classList.remove("drawnStick-1");
             element.classList.remove("drawnStick-3");
             element.classList.toggle("drawnStick-2");
-            playDrumSound(50, "tromme")
+            playSound(50, "tromme")
         }
         else if (randomNumber < 5) {
             element.classList.remove("drawnStick-1");
             element.classList.remove("drawnStick-2");
             element.classList.toggle("drawnStick-3");
-            playDrumSound(25, "tromme")
+            playSound(25, "tromme")
         }
         else {
+            document.getElementById('spinLeft').disabled = true;
+            document.getElementById('spinRight').disabled = true;
+            playSound(0, "magic")
             element.style.visibility = "hidden";
-            setTimeout(() => {element.style.visibility = ""}, 900);
+            setTimeout(() => {
+                element.style.visibility = "";  
+                document.getElementById('spinLeft').disabled = false;
+                document.getElementById('spinRight').disabled = false;}, 900);
             removeDrawnClass(element)
             return;
         }
@@ -48,7 +54,7 @@ const drawnStick = (elementId) => {
         isDrawn = !isDrawn;
     }
     else if (isDrawn) {
-        playDrumSound(0, "pull")
+        playSound(0, "pull")
         removeDrawnClass(element);
         return;
     }
@@ -90,7 +96,7 @@ const spinStick = (element, direction) => {
     degrees = direction == "Clockwise" ? degrees + rotationDegrees : degrees - rotationDegrees;
     element.style.transform = `rotate(${degrees}deg)`; 
     lastDirection = direction;
-    playDrumSound(0, "spin")
+    playSound(0, "spin")
 }
 
 const removeSpinStyle = (element) => {

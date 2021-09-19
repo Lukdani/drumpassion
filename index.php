@@ -36,13 +36,13 @@
     <?php include './includes/navbar.php';?>
     <div class="row bg-dark p-4">
         <div class="col-12 bg-dark">
-            <h2 class="drumstickHeader">
+            <h2 class="drumstickHeader text-light">
                 My passion. Your turn.
             </h2>
 
         </div>
         <div class="col-12" style="text-align: center; position: relative;">
-            <h2 id="tooltip">Hit me, baby!</h2>
+            <h2 class="d-none d-lg-block" id="tooltip">Hit me, baby!</h2>
             <image class="noselect" id="drumStick" style="height: 400px; margin: auto;" src="./images/drumStick.png" />
         </div>
         <div class="row spinTriggerContainer">
@@ -56,9 +56,14 @@
     </div>
     <div id="influences" class="row bg-secondary">
         <div class="col-12">
-            <h2 class="drumstickHeader p-2">
+            <h2 class="drumstickHeader p-2 text-light">
                 My influences
             </h2>
+            <p class="text-light influences-teaser">
+                Below you'll see some of my favorite drumming videos. <br>
+                Can you even wait to watch? To feel the inspiration? <br>
+                To sit behind the set and do what they do?
+            </p>
         </div>
         <div class="col-12 col-lg-5 offset-lg-1 p-4">
             <div class="ratio ratio-16x9">
@@ -93,7 +98,7 @@
                 <iframe src="https://www.youtube.com/embed/TVljmrKC3FM?start=120" allowfullscreen></iframe>
             </div>
             <p class="videoDescription">I have absolute no idea who this is, but I just love this clip! <br>I wish I
-                attended the event and had a cold beer 🍺
+                attended the event and had a few cold beers 🍺
 
             </p>
         </div>
@@ -105,7 +110,7 @@
     initiateSpinClockwiseListener("spinRight", "drumStick");
     initiateSpinCounterClockwiseListener("spinLeft", "drumStick");
     </script>
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -116,11 +121,8 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script> -->
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script>
-    console.log("test 2")
     </script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>

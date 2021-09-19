@@ -7,7 +7,6 @@ const drawnStick = (elementId) => {
     removeSpinStyle(element);
     var randomNumber = Math.random() * 6;
     console.log(randomNumber);
-    showTooltip(false);
     if (!isDrawn) {
         if (randomNumber < 3) {
             element.classList.remove("drawnStick-2");
@@ -53,8 +52,14 @@ const removeDrawnClass = (element) => {
 const showTooltip = (show) => {
     const element = document.getElementById("tooltip");
     try {
-        console.log(show);
-        element.style.display = show ? "block" : "none";
+        element.style.opacity = show ? "1" : "0";
+        if (show) {
+            var randomNumber = Math.random() * 2;
+            element.style.left =  `${randomNumber > 1 ? "15" : "75"}%`
+            randomNumber = Math.random() * 2;
+            element.style.top =  `${randomNumber > 1 ? "50" : "75"}%`
+            element.style.color =  `#${randomNumber > 1 ? "E55381" : "376996"}`
+        }
     }
     catch {}
 }
